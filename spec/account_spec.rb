@@ -35,9 +35,20 @@ RSpec.describe Account do
 
   describe '#withdraw' do
 
-    it 'rturns an array' do
+    it 'returns an array' do
       account = Account.new
       expect(account.withdraw(1.00)).to be_a_kind_of(Array)
     end
-  end
+
+    it 'returns the float it received' do
+        account = Account.new
+        expect(account.withdraw(1.00)).to include(1.00)
+    end
+
+    it 'returns the date in the format of DD/MM/YYYY' do
+    account = Account.new
+    time = Time.now
+    expect(account.withdraw(1.00)).to include(time.strftime("%d/%m/%Y"))
+   end
+ end
 end

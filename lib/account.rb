@@ -4,12 +4,14 @@ class Account
     deposit = []
     time = Time.now
     deposit.push(float, time.strftime("%d/%m/%Y"))
-     return deposit
+    deposit
   end
 
   def withdraw(float)
+    time = Time.now
     withdrawal = []
-    withdrawal.push(float)
+    withdrawal.push(float, time.strftime("%d/%m/%Y"))
+    withdrawal
   end
 
 
