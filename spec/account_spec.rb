@@ -15,6 +15,8 @@ RSpec.describe Account do
     #       expect(account.deposit(1.00)).to be_a_kind_of(Array)
     # end
 
+    #it takes only one parameter (one deposit or withdrawal at a time)
+
 
     it 'returns an array' do
         account = Account.new
@@ -51,4 +53,19 @@ RSpec.describe Account do
     expect(account.withdraw(1.00)).to include(time.strftime("%d/%m/%Y"))
    end
  end
+
+ describe '#print_statement' do
+   it 'returns the title row of the statement' do
+     account = Account.new
+     account.withdraw(1.00)
+     expect(account.print_statement).to include "date || credit || debit || balance"
+    end
+
+    it 'contains the withdrawal in the array' do
+      account = Account.new
+      time = Time.now
+      account.withdraw(1.00)
+      expect(account.print_statement).to include("1.0")
+    end
+  end
 end
