@@ -58,14 +58,8 @@ RSpec.describe Account do
    it 'returns the title row of the statement' do
      account = Account.new
      account.withdraw(1.00)
-     expect(account.print_statement).to include "date || credit || debit || balance"
+     expect(account.print_statement).to eq("date || credit || debit || balance")
     end
 
-    it 'contains the withdrawal in the array' do
-      account = Account.new
-      time = Time.now
-      account.withdraw(1.00)
-      expect(account.print_statement).to include("1.0")
-    end
   end
 end

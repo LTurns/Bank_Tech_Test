@@ -5,7 +5,7 @@ class Account
     @deposit = []
     @withdrawal = []
     @total = []
-    result = "date || credit || debit || balance"
+    @result = ["date || credit || debit || balance"].join(" || ")
   end
 
   def deposit(float)
@@ -19,14 +19,7 @@ class Account
   end
 
   def print_statement
-     puts @result
-      return @withdrawal | @deposit
-     # if @withdrawal != nil
-     #   return result + @withdrawal.join(" || ")
-     # end
-     # if @deposit != nil
-     #   return result + @deposit.join(" || ")
-     # end
+      @result
   end
 
 end
