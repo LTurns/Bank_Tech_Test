@@ -111,4 +111,4 @@ first depositing. There is no indication of using minus numbers in this requirem
 
 ## Diagraming:
 
-<img src="./img/bank_test.png" width="600" height="350" />
+<img src="./img/bank_diagram.png" width="600" height="350" />
