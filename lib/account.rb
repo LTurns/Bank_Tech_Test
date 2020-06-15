@@ -4,25 +4,29 @@ class Account
     @time = Time.now.strftime("%d/%m/%Y")
     @deposit = []
     @withdrawal = []
+    @total = []
+    result = "date || credit || debit || balance"
   end
 
   def deposit(float)
-    @deposit.push(@time, float, nil, float)
+    @total.push(float)
+    @deposit.push(@time, float, nil, @total.sum)
   end
 
   def withdraw(float)
-    @withdrawal.push(@time, nil, float, float)
+    @total.push(-float)
+    @withdrawal.push(@time, nil, float, @total.sum)
   end
 
   def print_statement
-     result = "date || credit || debit || balance"
-     puts result
-     if @withdrawal != nil
-       return result + @withdrawal.join(" || ")
-     end
-     if @deposit != nil
-       return result + @deposit.join(" || ")
-     end
+     puts @result
+      return @withdrawal | @deposit
+     # if @withdrawal != nil
+     #   return result + @withdrawal.join(" || ")
+     # end
+     # if @deposit != nil
+     #   return result + @deposit.join(" || ")
+     # end
   end
 
 end
