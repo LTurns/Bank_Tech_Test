@@ -22,7 +22,7 @@ date || credit || debit || balance
 
 ### Plan:
 
-# User Stories:
+### User Stories:
 
 ```
 As a client
@@ -42,7 +42,7 @@ So I can view my current balance and transactional history,
 I would like to print my bank statement in the form of "date || credit || debit || balance"
 ```
 
-# Brief overview of the bank statement table:
+### Brief overview of the bank statement table:
 
 *date formation of DD/MM/YYYY*
 *credit == deposit*
@@ -51,7 +51,7 @@ I would like to print my bank statement in the form of "date || credit || debit 
 *separated by || (or operator)*
 
 
-# Very Basic Input and Output Diagram
+### Very Basic Input and Output Diagram
 
 ```
 
@@ -63,7 +63,7 @@ I would like to print my bank statement in the form of "date || credit || debit 
 
 ```
 
-# More specific Input and Output Diagram
+### More specific Input and Output Diagram
 
 ```
 -------------------------------------
@@ -78,7 +78,7 @@ I would like to print my bank statement in the form of "date || credit || debit 
                             10/01/2012 || 1000.00 || || 1000.00  
 ```              
 
-# Example Input and Output Data
+### Example Input and Output Data
 
  ```
  ------------------------------------------------
@@ -97,7 +97,7 @@ I would like to print my bank statement in the form of "date || credit || debit 
 
  ```
 
-# Initial things to take note of based on this plan:
+### Initial things to take note of based on this plan:
 
 * Numbers are floats, not integers. There is also no use of currency ($ £).
 * Date is presented in order of most recent transaction
