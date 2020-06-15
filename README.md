@@ -42,15 +42,6 @@ So I can view my current balance and transactional history,
 I would like to print my bank statement in the form of "date || credit || debit || balance"
 ```
 
-### Brief overview of the bank statement table:
-
-*date formation of DD/MM/YYYY*
-*credit == deposit*
-*debit == withdrawal*
-*balance == total funds*
-*separated by || (or operator)*
-
-
 ### Very Basic Input and Output Diagram
 
 ```
@@ -107,6 +98,11 @@ I would like to print my bank statement in the form of "date || credit || debit 
 * Balance starts at 0.
 * For the sake of these requirements and given examples, a client must have sufficient funds to withdraw. You cannot withdraw without
 first depositing. There is no indication of using minus numbers in this requirement.
+* *date formation of DD/MM/YYYY*
+* *credit == deposit*
+* *debit == withdrawal*
+* *balance == total funds*
+* *separated by || (or operator)*
 
 
 ## Diagraming:
