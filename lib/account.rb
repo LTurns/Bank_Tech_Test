@@ -7,5 +7,10 @@ class Account
      return deposit
   end
 
+  def withdraw(float)
+    withdrawal = []
+    withdrawal.push(float)
+  end
+
 
 end
