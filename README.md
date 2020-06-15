@@ -63,7 +63,7 @@ I would like to print my bank statement in the form of "date || credit || debit 
 
 ```
 
-### More specific Input and Output Diagram
+### Incorporating Methods
 
 ```
 -------------------------------------
@@ -87,8 +87,8 @@ I would like to print my bank statement in the form of "date || credit || debit 
     deposit(500)  on 12/06/2020   |  -      
     deposit(150)  on 13/06/2020   |  -
     withdraw(150) on 14/06/2020   |  -
-    deposit(1000) on 15/06/2020   |
-    withdraw(500) on 15/06/2020   |
+    deposit(1000) on 15/06/2020   |  -
+    withdraw(500) on 15/06/2020   |  -
     print_bank_statement          |  date || credit || debit || balance
                                       15/06/2020 || 1000.00|| 500.00 || 1000.00
                                       14/06/2020 || || 150.00 || 500.00
@@ -107,3 +107,8 @@ I would like to print my bank statement in the form of "date || credit || debit 
 * Balance starts at 0.
 * For the sake of these requirements and given examples, a client must have sufficient funds to withdraw. You cannot withdraw without
 first depositing. There is no indication of using minus numbers in this requirement.
+
+
+## Diagraming:
+
+<img src="./img/bank_test.png" width="600" height="350" />
