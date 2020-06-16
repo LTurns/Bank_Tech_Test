@@ -64,17 +64,17 @@ RSpec.describe Account do
 
     it 'returns the bank statement as a string' do
         @account.transaction
-        expect(@account.print_statement).to eq("date || credit || debit || balance #{@time} ||  ||  || 0.00")
+        expect(@account.print_statement).to eq("date || credit || debit || balance \n#{@time} ||  ||  || 0.00")
     end
 
     it 'returns a blank withdrawal column when only a deposit is made' do
       @account.transaction(100, 0)
-      expect(@account.print_statement).to eq("date || credit || debit || balance #{@time} || 100.00 ||  || 100.00")
+      expect(@account.print_statement).to eq("date || credit || debit || balance \n#{@time} || 100.00 ||  || 100.00")
     end
 
     it 'returns a blank deposit column when only a withdrawal is made' do
       @account.transaction(0, 100)
-      expect(@account.print_statement).to eq("date || credit || debit || balance #{@time} ||  || 100.00 || -100.00")
+      expect(@account.print_statement).to eq("date || credit || debit || balance \n#{@time} ||  || 100.00 || -100.00")
     end
   end
 end
