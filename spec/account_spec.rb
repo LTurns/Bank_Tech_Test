@@ -1,22 +1,11 @@
 require 'account'
 
 RSpec.describe Account do
-#
-#   beforeEach
-#   time = Time.new
-#   account = Account.new
-# end
-#test that the input value is a float - or simply change it to a float at the start of the method?
-
 
   describe '#deposit' do
-    # it 'receives a float as a parameter' do
-    #       account = Account.new
-    #       expect(account.deposit(1.00)).to be_a_kind_of(Array)
-    # end
-
-    #it takes only one parameter (one deposit or withdrawal at a time)
-
+    before(:each) do
+       @account = Account.new
+     end
 
     it 'returns an array' do
         account = Account.new
