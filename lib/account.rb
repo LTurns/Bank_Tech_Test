@@ -7,13 +7,13 @@ class Account
   end
 
   def transaction(deposit = 0, withdrawal = 0)
-    @balance += (deposit -= withdrawal)
-
-    print_statement(deposit, withdrawal)
+    @deposit = deposit
+    @withdrawal = withdrawal
+    @balance += (@deposit - @withdrawal)
   end
 
-  def print_statement(deposit, withdrawal)
-    @result.push(["#{@time} || #{deposit} || #{withdrawal} || #{@balance}"]).join("\n")
+  def print_statement
+    @result.push(["#{@time} || #{@deposit} || #{@withdrawal} || #{@balance}"]).join "\n"
     # @deposit = nil if @deposit == 0
     # @withdrawal = nil if @withdrawal == 0
   end
