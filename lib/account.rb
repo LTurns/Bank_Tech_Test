@@ -16,8 +16,9 @@ class Account
 
   def print_statement
     @result = ["date || credit || debit || balance"]
-    @deposit = nil if @deposit == 0
-    @withdrawal = nil if @withdrawal == 0
-    @result.insert(1, ["#{@time} || #{@deposit} || #{@withdrawal} || #{@balance}"]).join(" \n ")
+    return @result.insert(1, ["#{@time} || #{@deposit = nil} || #{@withdrawal = nil} || #{sprintf("%.2f", @balance)}"]).join(" ") if @deposit == 0.00 && @withdrawal == 0.00
+    return @result.insert(1, ["#{@time} || #{@deposit = nil} || #{sprintf("%.2f", @withdrawal)} || #{sprintf("%.2f", @balance)}"]).join(" ") if @deposit == 0.00
+    return @result.insert(1, ["#{@time} || #{sprintf("%.2f", @deposit)} || #{@withdrawal = nil} || #{sprintf("%.2f", @balance)}"]).join(" ") if @withdrawal == 0.00
+    return @result.insert(1, ["#{@time} || #{sprintf("%.2f", @deposit)} || #{sprintf("%.2f", @withdrawal)} || #{sprintf("%.2f", @balance)}"]).join(" ") if @deposit != 0.00 && @withdrawal != 0.00
   end
 end
