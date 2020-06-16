@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Account
   attr_reader :balance
 
@@ -16,19 +14,14 @@ class Account
   end
 
   def print_statement
-    @result = ['date || credit || debit || balance']
-    if @deposit == 0.00 && @withdrawal == 0.00
-      return @result.insert(1, ["#{@time} || #{@deposit = nil} || #{@withdrawal = nil} || #{format('%.2f', @balance)}"]).join(" \n")
-    end
-    if @deposit == 0.00
-      return @result.insert(1, ["#{@time} || #{@deposit = nil} || #{format('%.2f', @withdrawal)} || #{format('%.2f', @balance)}"]).join(" \n")
-    end
-    if @withdrawal == 0.00
-      return @result.insert(1, ["#{@time} || #{format('%.2f', @deposit)} || #{@withdrawal = nil} || #{format('%.2f', @balance)}"]).join(" \n")
-    end
+     @result = ['date || credit || debit || balance']
+     statement
+  end
 
-    if @deposit != 0.00 && @withdrawal != 0.00
-      @result.insert(1, ["#{@time} || #{format('%.2f', @deposit)} || #{format('%.2f', @withdrawal)} || #{format('%.2f', @balance)}"]).join(" \n ")
-    end
+  def statement
+    return @result.insert(1, ["#{@time} || #{@deposit = nil} || #{@withdrawal = nil} || #{format('%.2f', @balance)}"]).join(" \n") if @deposit == 0.00 && @withdrawal == 0.00
+    return @result.insert(1, ["#{@time} || #{@deposit = nil} || #{format('%.2f', @withdrawal)} || #{format('%.2f', @balance)}"]).join(" \n") if @deposit == 0.00
+    return @result.insert(1, ["#{@time} || #{format('%.2f', @deposit)} || #{@withdrawal = nil} || #{format('%.2f', @balance)}"]).join(" \n") if @withdrawal == 0.00
+    return @result.insert(1, ["#{@time} || #{format('%.2f', @deposit)} || #{format('%.2f', @withdrawal)} || #{format('%.2f', @balance)}"]).join(" \n ") if @deposit != 0.00 && @withdrawal != 0.00
   end
 end
