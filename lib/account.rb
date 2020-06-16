@@ -2,27 +2,20 @@ class Account
 
   def initialize(balance = 0)
     @balance = balance
-    @result = ["date || credit || debit || balance"]
-    @time = Time.now.strftime("%d/%m/%Y")
   end
 
   def transaction(deposit = 0, withdrawal = 0)
+    @time = Time.now.strftime("%d/%m/%Y")
     @deposit = deposit
     @withdrawal = withdrawal
     @balance += (@deposit - @withdrawal)
+    "credit: #{@deposit}, debit: #{@withdrawal}"
   end
 
   def print_statement
-    @result.push(["#{@time} || #{@deposit} || #{@withdrawal} || #{@balance}"]).join "\n"
-    # @deposit = nil if @deposit == 0
-    # @withdrawal = nil if @withdrawal == 0
+    @result = ["date || credit || debit || balance"]
+    @deposit = nil if @deposit == 0
+    @withdrawal = nil if @withdrawal == 0
+    @result.insert(1, ["#{@time} || #{@deposit} || #{@withdrawal} || #{@balance}"]).join(" \n ")
   end
-  # def print_processor
-  #   @result.to_a.shift("date || credit || debit || balance")
-  # end
-
 end
-
-
-# @result ["date || credit || debit || balance"] <<
-# "#{@time} || #{@deposit} || #{@withdrawal}"
