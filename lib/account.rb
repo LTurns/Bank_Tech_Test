@@ -1,15 +1,17 @@
 class Account
 
-  def initialize(balance = 0)
+  attr_reader :balance
+
+  def initialize(balance = 0.00)
     @balance = balance
   end
 
-  def transaction(deposit = 0, withdrawal = 0)
+  def transaction(deposit = 0.00, withdrawal = 0.00)
     @time = Time.now.strftime("%d/%m/%Y")
     @deposit = deposit
     @withdrawal = withdrawal
     @balance += (@deposit - @withdrawal)
-    "credit: #{@deposit}, debit: #{@withdrawal}"
+    "credit: #{sprintf("%.2f", @deposit)}, debit: #{sprintf("%.2f", @withdrawal)}"
   end
 
   def print_statement
