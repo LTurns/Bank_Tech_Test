@@ -22,8 +22,16 @@ date || credit || debit || balance
 10/01/2012 || 1000.00 || || 1000.00
 ```
 
+## My Approach:
 
-# How to use the code:
+As you can see from my plan, I originally approached this task with three separate methods; deposit, withdraw, print_statement.
+However, this changed when I considered the structure of the statement - Even when a user only deposits, we are still required to show the
+debit column, but keep it blank.
+
+I therefore decided to carry out both the deposit and withdrawal within the same transaction method, but have the default of zero;
+so that even when only a deposit is made, the withdrawal still receives a value of nil (or vice versa).
+
+## How to use the code:
 
 Set Up:
 
