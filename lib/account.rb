@@ -15,10 +15,6 @@ class Account
 
   def print_statement
     @result = ['date || credit || debit || balance']
-    statement
-  end
-
-  def statement
     @deposit = nil if @deposit.to_i.zero?
     @withdrawal = nil if @withdrawal.to_i.zero?
     @result.insert(1, ["#{@time} || #{@deposit} || #{@withdrawal} || #{format('%.2f', @balance)}"]).join(" \n")
