@@ -27,7 +27,7 @@ date || credit || debit || balance
 
 Set Up:
 
-* Run bundle init, add the below Gems to the Gemfile, and run bundle install.
+* Run bundle install to install the gems from within the gemfile.
 ```
 group :test do
   gem 'rspec'
@@ -37,25 +37,14 @@ group :test do
 end
 
 ```
-* Add simplecov to the rspec helper.
-
-```
-RSpec.configure do |config|
-  config.after(:suite) do
-    puts
-    puts "\e[33mHave you considered running rubocop? It will help you improve your code!\e[0m"
-    puts "\e[33mTry it now! Just run: rubocop\e[0m"
-  end
-end
-```
 
 Running the tests:
 
-* Type rspec in the terminal, within the main Bank_Tech_Test file
+* Type rspec in the terminal, within the main Bank_Tech_Test directory.
 
 Running the code:
 
-* Use IRB to run the code - and require './lib/account.rb'
+* Use IRB to run the code - and require './lib/account.rb'.
 
 
 ### Plan:
