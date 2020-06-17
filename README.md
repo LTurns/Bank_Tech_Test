@@ -1,3 +1,5 @@
+# Bank Tech Test
+
 ### Requirements
 
 * You should be able to interact with your code via a REPL like IRB or the JavaScript console.  (You don't need to implement a command line interface that takes input from STDIN.)
@@ -19,6 +21,42 @@ date || credit || debit || balance
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
 ```
+
+
+# How to use the code:
+
+Set Up:
+
+* Run bundle init, add the below Gems to the Gemfile, and run bundle install.
+```
+group :test do
+  gem 'rspec'
+  gem 'rubocop', '0.79.0'
+  gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
+end
+
+```
+* Add simplecov to the rspec helper.
+
+```
+RSpec.configure do |config|
+  config.after(:suite) do
+    puts
+    puts "\e[33mHave you considered running rubocop? It will help you improve your code!\e[0m"
+    puts "\e[33mTry it now! Just run: rubocop\e[0m"
+  end
+end
+```
+
+Running the tests:
+
+* Type rspec in the terminal, within the main Bank_Tech_Test file
+
+Running the code:
+
+* Use IRB to run the code - and require './lib/account.rb'
+
 
 ### Plan:
 
